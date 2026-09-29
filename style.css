@@ -82,6 +82,7 @@ a {
   transform: translateY(0);
 }
 
+/* HEADER STYLE APPLE AVEC MENU CENTRÉ */
 header {
   background-color: var(--header-bg);
   backdrop-filter: blur(20px);
@@ -94,13 +95,17 @@ header {
 }
 
 .header-content {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
+  min-height: 38px;
 }
 
 nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 1.5rem;
 }
@@ -111,6 +116,7 @@ nav a {
   font-size: 0.95rem;
   transition: color 0.2s ease, text-shadow 0.2s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -123,6 +129,7 @@ nav a:hover {
   align-items: center;
   gap: 0.65rem;
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .social-btn,
@@ -165,6 +172,7 @@ nav a:hover {
   transform: translateY(-2px) rotate(15deg);
 }
 
+/* BADGES & TAGS CAPSULE */
 .badge {
   display: inline-block;
   background-color: var(--primary-light);
@@ -191,6 +199,7 @@ nav a:hover {
   text-transform: uppercase;
 }
 
+/* BOUTONS PILULE */
 .btn-group {
   display: flex;
   gap: 1rem;
@@ -234,6 +243,7 @@ nav a:hover {
   box-shadow: 0 8px 22px var(--glow-primary);
 }
 
+/* HERO SECTION */
 .hero {
   padding: 7rem 0 6rem;
   display: grid;
@@ -276,6 +286,7 @@ nav a:hover {
   font-size: 5rem;
 }
 
+/* SECTIONS */
 section {
   padding: 6rem 0;
   margin-top: 3rem;
@@ -501,7 +512,8 @@ footer {
   font-size: 0.85rem;
 }
 
-@media (max-width: 860px) {
+/* RESPONSIVE */
+@media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
     padding: 4rem 0 3rem;
@@ -518,6 +530,8 @@ footer {
   }
 
   nav {
+    position: static;
+    transform: none;
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 0.25rem;
